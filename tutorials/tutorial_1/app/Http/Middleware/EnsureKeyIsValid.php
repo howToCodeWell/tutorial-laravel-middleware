@@ -18,7 +18,6 @@ class EnsureKeyIsValid
         if ($request->input('key') !== 'my-secret-key') {
             return redirect('/login');
         }
- 
         return $next($request);
     }
 }

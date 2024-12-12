@@ -8,11 +8,21 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // })->withMiddleware([EnsureKeyIsValid::class]);
 
+// Route::middleware([EnsureKeyIsValid::class])->group(function () {
+//     Route::get('/', function () {
+//         return view('welcome');
+//     });
+ 
+//     Route::get('/login', function () {
+//         return view('login');
+//     })->withoutMiddleware([EnsureKeyIsValid::class]);
+// });
+
 Route::middleware([EnsureKeyIsValid::class])->group(function () {
     Route::get('/', function () {
         return view('welcome');
     });
- 
+
     Route::get('/login', function () {
         return view('login');
     })->withoutMiddleware([EnsureKeyIsValid::class]);
