@@ -6,7 +6,7 @@ use App\Http\Middleware\CheckUserRoleRequest;
 use Illuminate\Support\Facades\Route;
 
 
-Route::middleware([CheckUserRoleRequest::class. ':editor|manager'])->group(function () {
+Route::middleware([CheckUserRoleRequest::class . ':manager,test'])->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
 });
 
