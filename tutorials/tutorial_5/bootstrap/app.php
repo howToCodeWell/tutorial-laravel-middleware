@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'api.key' => RequireAPIKey::class
+            'api.key' => RequireAPIKey::class 
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

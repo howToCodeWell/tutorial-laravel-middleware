@@ -3,9 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
+use Symfony\Component\HttpFoundation\Response;
 
 class RequireAPIKey
 {
@@ -16,14 +15,14 @@ class RequireAPIKey
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): JsonResponse
+    public function handle(Request $request, Closure $next): Response
     {
         $key = $request->header('x-secret-key');
 
         if ($key !== self::SECRET) {
-            return Response()->json(['message' =>'Requires key'], 401);
+            return Response()->json(['message'=> 'Requires Key'], 401);
         }
-    
+
         return $next($request);
     }
 }
