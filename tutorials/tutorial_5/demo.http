@@ -1,0 +1,10 @@
+### Request without key
+GET http://127.0.0.1:8000/api
+
+### Request with wrong key
+GET http://127.0.0.1:8000/api
+x-secret-key: FOO
+
+### Request with key
+GET http://127.0.0.1:8000/api
+x-secret-key: HTCW
