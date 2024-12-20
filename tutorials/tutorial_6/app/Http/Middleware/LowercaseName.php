@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 
 class LowercaseName
@@ -17,10 +16,7 @@ class LowercaseName
     public function handle(Request $request, Closure $next): Response
     {
         $name = $request->route('name');
-
         $request->route()->setParameter('name', strtolower($name));
-
-        Log::info('Name has been lowercased');
 
         return $next($request);
     }
