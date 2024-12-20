@@ -7,3 +7,4 @@
 pragmatically-logging-into-laravel)
 - [Tutorial 5](./tutorials/tutorial_5/README.md): [Middleware alias](https://howtocodewell.net/tutorial/laravel-middleware-alias)
 - [Tutorial 6](./tutorials/tutorial_6/README.md): [Alter route parameters from middleware](https://howtocodewell.net/tutorial/laravel-middleware-route-parameters)
+- [Tutorial 7](./tutorials/tutorial_6/README.md): [Middlware groups](https://howtocodewell.net/tutorial/laravel-middleware-groups)
